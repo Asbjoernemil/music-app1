@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Music App</title>
+</head>
+
+<body>
+    <header>Music App</header>
+    <nav>
+        <div id="searchAndFilter">
+            <div>
+                <label for="searchBar">Search</label>
+            </div>
+            <div>
+                <label for="showOnly">Filter:</label>
+            </div>
+            <input type="search" id="searchBar" name="searchBar" placeholder="Name/Genre/Labels" />
+            <div>
+                <select name="showOnly" id="showOnly">
+                    <option value="none" selected></option>
+                    <option value="male">Males</option>
+                    <option value="female">Females</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label for="sortBy">Sort by:</label>
+            <select name="sortBy" id="sortBy">
+                <option value="none" selected></option>
+                <option value="name">Name</option>
+                <option value="genre">genre</option>
+                <option value="Labels">Labels</option>
+            </select>
+        </div>
+    </nav>
+
+    <main>
+        <section id="artistGrid" class="grid-container">
+
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
