@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import { artists } from "./data.js"
+import fs from "fs"
 
 const app = express();
 
