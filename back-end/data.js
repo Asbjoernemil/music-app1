@@ -1,4 +1,4 @@
-[
+export const artists = [
     {
         "name": "Michael Jackson",
         "birthdate": "August 29, 1958",
