@@ -45,6 +45,23 @@ export async function deleteArtist(id) {
     if (response.ok) {
         const updatedArtists = await response.json();
         showArtists(updatedArtists);
-        console.log("Artist deleted"); // Dette vil vise en besked i konsollen, når kunstneren er slettet.
+        console.log("Artist deleted");
+    }
+}
+
+export async function updateArtist(updatedArtist) {
+    const json = JSON.stringify(updatedArtist);
+    const response = await fetch(`${endpoint}/artists/data/${updatedArtist.id}`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: json
+    });
+
+    if (response.ok) {
+        console.log("Artist updated");
+        const updatedArtists = await response.json();
+        showArtists(updatedArtists); // Opdater listen med kunstnere på siden
     }
 }

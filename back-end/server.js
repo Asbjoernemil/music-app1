@@ -30,6 +30,24 @@ app.post('/artists/data', async (req, res) => {
     res.json(artists);
 });
 
+app.put('/artists/data/:id', async (req, res) => {
+    const id = Number(req.params.id);
+    const updatedArtist = req.body;
+
+    const data = await fs.readFile(`data.json`);
+    const artists = JSON.parse(data);
+
+    const index = artists.findIndex(artist => artist.id === id);
+
+    if (index !== -1) {
+        artists[index] = updatedArtist;
+        await fs.writeFile("data.json", JSON.stringify(artists));
+        res.json(updatedArtist);
+    } else {
+        res.status(404).json({ error: "Artist not found" });
+    }
+});
+
 app.delete('/artists/data/:id', async (req, res) => {
     const id = Number(req.params.id);
 

@@ -1,6 +1,6 @@
 "use strict"
 
-import { createNew } from "./main.js";
+import { createNew, updateArtist } from "./main.js";
 
 
 export function createNewClicked(event) {
@@ -21,4 +21,30 @@ export function createNewClicked(event) {
     }
 
     createNew(newArtist)
+}
+
+export function UpdateArtistClicked(event, artist) {
+    event.preventDefault();
+
+    const formInput = document.forms.updateArtistForm;
+
+    const updatedArtist = {
+        id: artist.id,
+        name: formInput.editName.value,
+        gender: formInput.editGender.value,
+        birthdate: formInput.editBirthdate.value,
+        activeSince: formInput.editActiveSince.value,
+        genres: formInput.editGenres.value.split(",").map((genre) => genre.trim()),
+        labels: formInput.editLabels.value.split(",").map((label) => label.trim()),
+        website: formInput.editWebsite.value,
+        image: formInput.editImage.value,
+        shortDescription: formInput.editShortDescription.value,
+    };
+
+    // Kald opdateringsfunktionen i main.js
+    updateArtist(updatedArtist);
+
+    // Luk opdateringsdialogen
+    const updateDialog = document.querySelector("#updateArtistDialog");
+    updateDialog.close();
 }

@@ -1,5 +1,6 @@
 "use strict"
 
+import { showUpdateDialog } from "./dialog.js";
 import { deleteArtist } from "./main.js";
 
 export function showArtists(artists) {
@@ -23,5 +24,6 @@ export function showArtists(artists) {
     `
         document.querySelector("#artistTableBody").insertAdjacentHTML("beforeend", html);
         document.querySelector("#artistTableBody tr:last-child .delete-button").addEventListener("click", () => deleteArtist(artist.id, artists));
+        document.querySelector("#artistTableBody tr:last-child .update-button").addEventListener("click", () => showUpdateDialog(artist.id, artists));
     }
 }
