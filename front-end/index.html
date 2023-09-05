@@ -33,17 +33,37 @@
                 <option value="none" selected></option>
                 <option value="name">Name</option>
                 <option value="genre">genre</option>
-                <option value="Labels">Labels</option>
+                <option value="labels">Labels</option>
+                <option value="gender">Gender</option>
             </select>
         </div>
     </nav>
 
     <main>
-        <section id="artistGrid" class="grid-container">
-
-        </section>
+        <div id="artists">
+            <h2>Artist Data</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Birthdate</th>
+                        <th>Gender</th>
+                        <th>Active Since</th>
+                        <th>Genres</th>
+                        <th>Labels</th>
+                        <th>Website</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="artistTableBody">
+                </tbody>
+            </table>
+        </div>
     </main>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="display.js"></script>
+
 </body>
 
 </html>

@@ -2,7 +2,7 @@ export const artists = [
     {
         "id": 0,
         "name": "Michael Jackson",
-        "Gender": "Male",
+        "gender": "Male",
         "birthdate": "August 29, 1958",
         "activeSince": "1964",
         "genres": ["Pop", "R&B"],
@@ -14,7 +14,7 @@ export const artists = [
     {
         "id": 1,
         "name": "The Beatles",
-        "Gender": "Male",
+        "gender": "Male",
         "birthdate": "Formed in 1960",
         "activeSince": "1960s",
         "genres": ["Rock", "Pop"],
@@ -26,7 +26,7 @@ export const artists = [
     {
         "id": 2,
         "name": "Bob Marley",
-        "Gender": "Male",
+        "gender": "Male",
         "birthdate": "February 6, 1945",
         "activeSince": "1962",
         "genres": ["Reggae"],
@@ -38,7 +38,7 @@ export const artists = [
     {
         "id": 3,
         "name": "Elvis Presley",
-        "Gender": "Male",
+        "gender": "Male",
         "birthdate": "January 8, 1935",
         "activeSince": "1954",
         "genres": ["Rock and Roll"],
@@ -50,7 +50,7 @@ export const artists = [
     {
         "id": 4,
         "name": "Beyoncé",
-        "Gender": "Female",
+        "gender": "Female",
         "birthdate": "September 4, 1981",
         "activeSince": "Late 1990s",
         "genres": ["R&B", "Pop"],
@@ -62,7 +62,7 @@ export const artists = [
     {
         "id": 5,
         "name": "Miles Davis",
-        "Gender": "Male",
+        "gender": "Male",
         "birthdate": "May 26, 1926",
         "activeSince": "1940s",
         "genres": ["Jazz"],
@@ -74,7 +74,7 @@ export const artists = [
     {
         "id": 6,
         "name": "Madonna",
-        "Gender": "Female",
+        "gender": "Female",
         "birthdate": "August 16, 1958",
         "activeSince": "1980s",
         "genres": ["Pop", "Dance"],
@@ -86,7 +86,7 @@ export const artists = [
     {
         "id": 7,
         "name": "Prince",
-        "Gender": "Male",
+        "gender": "Male",
         "birthdate": "June 7, 1958",
         "activeSince": "Late 1970s",
         "genres": ["Pop", "Funk", "R&B"],
@@ -98,7 +98,7 @@ export const artists = [
     {
         "id": 8,
         "name": "Adele",
-        "Gender": "Female",
+        "gender": "Female",
         "birthdate": "May 5, 1988",
         "activeSince": "2000s",
         "genres": ["Pop", "Soul"],
@@ -110,7 +110,7 @@ export const artists = [
     {
         "id": 9,
         "name": "David Bowie",
-        "Gender": "Male",
+        "gender": "Male",
         "birthdate": "January 8, 1947",
         "activeSince": "1960s",
         "genres": ["Rock", "Pop"],
