@@ -11,14 +11,53 @@
 <body>
     <header>Music App</header>
     <nav>
-        <div id="searchAndFilter">
-            <div>
-                <label for="searchBar">Search</label>
+        <div>
+            <div id="createNewButton">
+                <button id="createNewDialog">Add New Artist</button>
             </div>
+            <dialog id="newArtistDialog" class="hidden">
+                <h3>Add New Artist</h3>
+                <form id="artistForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+
+                    <label for="gender">Gender:</label>
+                    <select id="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="birthdate">Birthdate:</label>
+                    <input type="text" id="birthdate" required>
+
+                    <label for="activeSince">Active Since:</label>
+                    <input type="text" id="activeSince" required>
+
+                    <label for="genres">Genres:</label>
+                    <input type="text" id="genres" required>
+
+                    <label for="labels">Labels:</label>
+                    <input type="text" id="labels" required>
+
+                    <label for="website">Website:</label>
+                    <input type="url" id="website" required>
+
+                    <label for="image">Image URL:</label>
+                    <input type="url" id="image" required>
+
+                    <label for="shortDescription">Short Description:</label>
+                    <textarea id="shortDescription" required></textarea>
+
+                    <button type="submit">Save</button>
+                </form>
+            </dialog>
+        </div>
+
+        <div id="filter">
             <div>
                 <label for="showOnly">Filter:</label>
             </div>
-            <input type="search" id="searchBar" name="searchBar" placeholder="Name/Genre/Labels" />
             <div>
                 <select name="showOnly" id="showOnly">
                     <option value="none" selected></option>
@@ -32,7 +71,7 @@
             <select name="sortBy" id="sortBy">
                 <option value="none" selected></option>
                 <option value="name">Name</option>
-                <option value="genre">genre</option>
+                <option value="genre">Genre</option>
                 <option value="labels">Labels</option>
                 <option value="gender">Gender</option>
             </select>

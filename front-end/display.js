@@ -1,5 +1,4 @@
 "use strict"
-// import { artists } from "../back-end/data.js";
 
 export function showArtists(artists) {
     document.querySelector("#artistTableBody").innerHTML = ""

@@ -1,7 +1,6 @@
 import express from "express"
 import cors from "cors"
-import { artists } from "./data.js"
-import fs from "fs"
+import fs from "fs/promises"
 
 const app = express();
 
@@ -9,8 +8,10 @@ app.use(express.json());
 
 app.use(cors());
 
-app.get('/artists/data', (req, res) => {
-    res.json(artists);
+app.get('/artists/data', async (req, res) => {
+    const data = await fs.readFile(`data.json`);
+    const artists = JSON.parse(data);
+    res.send(artists);
 });
 
 app.get('/artists/data/:id', (req, res) => {
