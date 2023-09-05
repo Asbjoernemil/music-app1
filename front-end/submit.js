@@ -13,7 +13,7 @@ export function createNewClicked(event) {
         gender: formInput.gender.value,
         birthdate: formInput.birthdate.value,
         activeSince: formInput.activeSince.value,
-        genres: formInput.genre.value,
+        genres: formInput.genres.value,
         labels: formInput.labels.value,
         website: formInput.website.value,
         image: formInput.image.value,

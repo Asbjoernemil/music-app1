@@ -4,7 +4,7 @@ import { createNewClicked } from "./submit.js";
 
 
 export function showCreateDialog() {
-    const createDialog = document.querySelector("#newArtistDialog"); // Ændret id til "newArtistDialog"
+    const createDialog = document.querySelector("#newArtistDialog");
 
     document.querySelector("#artistForm").addEventListener("submit", createNewClicked);
 

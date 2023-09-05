@@ -22,8 +22,6 @@ export async function getData() {
 }
 
 export async function createNew(newArtist) {
-    newArtist.id = new Date().getTime();
-
     const json = JSON.stringify(newArtist);
     const response = await fetch(`${endpoint}/artists/data`, {
         method: "POST",
@@ -34,5 +32,19 @@ export async function createNew(newArtist) {
     })
     if (response.ok) {
         console.log("Created");
+        const artists = response.json()
+        showArtists(artists)
+    }
+}
+
+export async function deleteArtist(id) {
+    const response = await fetch(`${endpoint}/artists/data/${id}`, {
+        method: "DELETE"
+    });
+
+    if (response.ok) {
+        const updatedArtists = await response.json();
+        showArtists(updatedArtists);
+        console.log("Artist deleted"); // Dette vil vise en besked i konsollen, når kunstneren er slettet.
     }
 }
