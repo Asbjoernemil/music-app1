@@ -1,6 +1,6 @@
 "use strict"
 import { showCreateDialog } from "./dialog.js";
-import { showArtists } from "./display.js";
+import { filterArtists, showArtists } from "./display.js";
 
 window.addEventListener("load", start);
 
@@ -10,6 +10,10 @@ export async function start() {
     const artistData = await getData();
 
     document.querySelector("#createNewButton").addEventListener("click", showCreateDialog)
+    document.querySelector("#sortBy").addEventListener("change", () => showArtists(artistData));
+    document.querySelector("#showOnly").addEventListener("change", filterArtists);
+
+    document.querySelector("#editArtistForm").addEventListener("submit", (event) => updateArtist(event, artistData));
 
     showArtists(artistData)
 }
@@ -49,19 +53,47 @@ export async function deleteArtist(id) {
     }
 }
 
-export async function updateArtist(updatedArtist) {
-    const json = JSON.stringify(updatedArtist);
-    const response = await fetch(`${endpoint}/artists/data/${updatedArtist.id}`, {
+export async function updateArtist(event, artists, id) {
+    console.log("Update Artist function called."); // Tilføj denne linje
+
+    const form = event.target;
+
+    const name = form.editName.value;
+    const gender = form.editGender.value;
+    const birthdate = form.editBirthdate.value;
+    const activeSince = form.editActiveSince.value;
+    const genres = form.editGenres.value;
+    const labels = form.editLabels.value;
+    const website = form.editWebsite.value;
+    const image = form.editImage.value;
+    const shortDescription = form.editShortDescription.value;
+
+    const artistToUpdate = {
+        name,
+        gender,
+        birthdate,
+        activeSince,
+        genres,
+        labels,
+        website,
+        image,
+        shortDescription,
+    };
+
+    const artistAsJson = JSON.stringify(artistToUpdate);
+
+    const response = await fetch(`${endpoint}/artists/data/${id}`, {
         method: "PUT",
+        body: artistAsJson,
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
         },
-        body: json
     });
 
     if (response.ok) {
-        console.log("Artist updated");
-        const updatedArtists = await response.json();
-        showArtists(updatedArtists); // Opdater listen med kunstnere på siden
+        // Opdater kunstnerlisten
+        const updatedArtists = await getData();
+        showArtists(updatedArtists);
+        scrollToTop();
     }
 }

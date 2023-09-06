@@ -23,10 +23,10 @@ export function createNewClicked(event) {
     createNew(newArtist)
 }
 
-export function UpdateArtistClicked(event, artist) {
+export function updateArtistClicked(event, artist) {
     event.preventDefault();
 
-    const formInput = document.forms.updateArtistForm;
+    const formInput = document.forms.editArtistForm;
 
     const updatedArtist = {
         id: artist.id,
@@ -34,17 +34,14 @@ export function UpdateArtistClicked(event, artist) {
         gender: formInput.editGender.value,
         birthdate: formInput.editBirthdate.value,
         activeSince: formInput.editActiveSince.value,
-        genres: formInput.editGenres.value.split(",").map((genre) => genre.trim()),
-        labels: formInput.editLabels.value.split(",").map((label) => label.trim()),
+        genres: formInput.editGenres.value,
+        labels: formInput.editLabels.value,
         website: formInput.editWebsite.value,
         image: formInput.editImage.value,
         shortDescription: formInput.editShortDescription.value,
     };
 
-    // Kald opdateringsfunktionen i main.js
     updateArtist(updatedArtist);
 
-    // Luk opdateringsdialogen
-    const updateDialog = document.querySelector("#updateArtistDialog");
-    updateDialog.close();
+    // Her kan du tilføje kode til at lukke dialogen eller foretage andre handlinger efter opdatering
 }

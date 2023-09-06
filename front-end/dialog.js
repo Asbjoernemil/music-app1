@@ -1,6 +1,6 @@
 "use strict"
 
-import { UpdateArtistClicked, createNewClicked } from "./submit.js";
+import { createNewClicked, updateArtistClicked } from "./submit.js";
 
 
 export function showCreateDialog() {
@@ -11,25 +11,29 @@ export function showCreateDialog() {
     createDialog.showModal();
 }
 
-export function showUpdateDialog(artist) {
-    const updateDialog = document.querySelector("#editArtistDialog");
+export function showUpdateDialog(artist, artists) {
+    const editArtistDialog = document.querySelector("#editArtistDialog");
 
-    // Udfyld inputfelterne i opdateringsdialogen med kunstnerens nuværende oplysninger
-    document.querySelector("#editName").value = artist.name;
-    document.querySelector("#editGender").value = artist.gender;
-    document.querySelector("#editBirthdate").value = artist.birthdate;
-    document.querySelector("#editActiveSince").value = artist.activeSince;
-    document.querySelector("#editGenres").value = artist.genres;
-    document.querySelector("#editLabels").value = artist.labels;
-    document.querySelector("#editWebsite").value = artist.website;
-    document.querySelector("#editImage").value = artist.image;
-    document.querySelector("#editShortDescription").value = artist.shortDescription;
+    // Find kunstneren baseret på artist-id (du skal have en metode til at søge efter kunstnere i artists-array)
+    const selectedArtist = artists.find(a => a.id === artist);
 
-    // Tilføj en eventlistener til opdateringsformularen
-    document.querySelector("#editArtistForm").addEventListener("submit", (event) => {
-        event.preventDefault();
-        UpdateArtistClicked(event, artist); // Send event med som det første argument
-    });
+    if (selectedArtist) {
+        // Udfyld dialogformularen med kunstnerens oplysninger
+        const form = document.querySelector("#editArtistForm");
+        form.editName.value = selectedArtist.name;
+        form.editGender.value = selectedArtist.gender;
+        form.editBirthdate.value = selectedArtist.birthdate;
+        form.editActiveSince.value = selectedArtist.activeSince;
+        form.editGenres.value = selectedArtist.genres;
+        form.editLabels.value = selectedArtist.labels;
+        form.editWebsite.value = selectedArtist.website;
+        form.editImage.value = selectedArtist.image;
+        form.editShortDescription.value = selectedArtist.shortDescription;
 
-    updateDialog.showModal();
+        // Åbn dialogen
+        editArtistDialog.showModal();
+
+        // Lyt efter submit på dialogformularen og kald updateArtistClicked
+        form.addEventListener("submit", (event) => updateArtistClicked(event, selectedArtist, artists));
+    }
 }

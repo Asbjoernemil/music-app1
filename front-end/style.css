@@ -1,0 +1,95 @@
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav {
+    background-color: #444;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+nav select,
+nav label {
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Skriftfarve for filter og sortby select-boxes */
+nav select {
+    padding: 5px;
+    color: black;
+    /* Ændre skriftfarven her, f.eks. sort */
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Dialog-styling */
+dialog {
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Tilføj en generel styling til hele tabellen */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    /* Øg afstanden mellem tabellen og overskriften */
+}
+
+/* Style overskrifterne i tabellen */
+th {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Style cellerne i tabellen */
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Stylet rækkerne skiftevis for bedre læsbarhed */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Tilføj lidt mellemrum mellem cellerne i samme række */
+td+td {
+    border-left: 1px solid #ccc;
+}
+
+/* Style knappen i formen */
+form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    /* Tilføj lidt mellemrum under knappen */
+}
+
+/* Hover-effekt på knappen */
+form button:hover {
+    background-color: #444;
+}

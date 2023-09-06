@@ -37,15 +37,23 @@ app.put('/artists/data/:id', async (req, res) => {
     const data = await fs.readFile(`data.json`);
     const artists = JSON.parse(data);
 
-    const index = artists.findIndex(artist => artist.id === id);
+    let artistToUpdate = artists.find(artist => artist.id == id);
+    const body = request.body;
+    artistToUpdate.name = body.name;
+    artistToUpdate.birthdate = body.birthdate;
+    artistToUpdate.birthdate = body.gender;
+    artistToUpdate.activeSince = body.activeSince;
+    artistToUpdate.genres = body.genres;
+    artistToUpdate.labels = body.labels;
+    artistToUpdate.website = body.website;
+    artistToUpdate.image = body.image;
+    artistToUpdate.shortDescription = body.shortDescription;
+    // artistToUpdate.favorite = body.favorite;
 
-    if (index !== -1) {
-        artists[index] = updatedArtist;
-        await fs.writeFile("data.json", JSON.stringify(artists));
-        res.json(updatedArtist);
-    } else {
-        res.status(404).json({ error: "Artist not found" });
-    }
+    console.log(body);
+    console.log(artists);
+    fs.writeFile(`data.json`, JSON.stringify(artists));
+    response.json(artists);
 });
 
 app.delete('/artists/data/:id', async (req, res) => {
