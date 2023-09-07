@@ -44,6 +44,4 @@ export function updateArtistClicked(event, selectedArtist) {
     };
 
     updateArtist(updatedArtist);
-
-    // Her kan du tilføje kode til at lukke dialogen eller foretage andre handlinger efter opdatering
 }

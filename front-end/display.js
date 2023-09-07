@@ -13,13 +13,13 @@ export function showArtists(artists) {
 
     const sortBy = document.querySelector("#sortBy").value;
 
-    let artistsToDisplay = [...artists]; // Opret en kopi af de kunstnere, der skal vises
+    let artistsToDisplay = [...artists]; // Opret en kopi
 
     if (sortBy === "activeSince") {
-        // Sortér kunstnerne efter "Active Since" år i stigende rækkefølge
+        // Sortér kunstnerne efter "Active Since"
         artistsToDisplay.sort((a, b) => a.activeSince - b.activeSince);
     } else if (sortBy === "name") {
-        // Sortér kunstnerne efter navn i alfabetisk rækkefølge
+        // Sortér kunstnerne efter navn
         artistsToDisplay.sort((a, b) => a.name.localeCompare(b.name));
     }
 
@@ -61,9 +61,9 @@ export async function filterArtists() {
         console.log("ALL", originalArtists)
     }
 
-    console.log("Filter Value:", filterValue); // Udskriv filterværdien
+    console.log("Filter Value:", filterValue);
     console.log("Filtered Artists:", filteredArtists);
-    showArtists(filteredArtists); // Vis de filtrerede kunstnere
+    showArtists(filteredArtists);
 }
 
 export async function showFavorites(artist) {

@@ -1,7 +1,6 @@
 import express from "express"
 import cors from "cors"
 import fs from "fs/promises"
-import { lstat } from "fs";
 
 const app = express();
 

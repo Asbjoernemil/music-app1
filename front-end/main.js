@@ -54,7 +54,6 @@ export async function deleteArtist(id) {
 }
 
 export async function updateArtist(artist) {
-    console.log("Update Artist function called."); // Tilføj denne linje
 
     const artistAsJson = JSON.stringify(artist, null, 2);
     console.log(artist);
@@ -68,7 +67,6 @@ export async function updateArtist(artist) {
     });
 
     if (response.ok) {
-        // Opdater kunstnerlisten
         const updatedArtists = await response.json();
         showArtists(updatedArtists);
     }

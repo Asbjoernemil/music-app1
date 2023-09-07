@@ -14,11 +14,11 @@ export function showCreateDialog() {
 export function showUpdateDialog(artist, artists) {
     const editArtistDialog = document.querySelector("#editArtistDialog");
 
-    // Find kunstneren baseret på artist-id (du skal have en metode til at søge efter kunstnere i artists-array)
+    // Find kunstneren baseret på artist-id
     const selectedArtist = artists.find(a => a.id === artist);
 
     if (selectedArtist) {
-        // Udfyld dialogformularen med kunstnerens oplysninger
+        // Udfyld dialogformularen
         const form = document.querySelector("#editArtistForm");
         form.editName.value = selectedArtist.name;
         form.editGender.value = selectedArtist.gender;
@@ -33,10 +33,8 @@ export function showUpdateDialog(artist, artists) {
         const favoriteCheckbox = form.querySelector('input[name="favorite"]');
         favoriteCheckbox.checked = selectedArtist.favorite;
 
-        // Åbn dialogen
         editArtistDialog.showModal();
 
-        // Lyt efter submit på dialogformularen og kald updateArtistClicked
         form.addEventListener("submit", (event) => updateArtistClicked(event, selectedArtist));
     }
 }
