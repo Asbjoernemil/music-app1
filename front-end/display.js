@@ -7,7 +7,8 @@ let originalArtists = [];
 
 
 export function showArtists(artists) {
-    originalArtists = artists;
+    originalArtists = [...artists]
+
     document.querySelector("#artistTableBody").innerHTML = "";
 
     const sortBy = document.querySelector("#sortBy").value;
@@ -21,6 +22,7 @@ export function showArtists(artists) {
         // Sortér kunstnerne efter navn i alfabetisk rækkefølge
         artistsToDisplay.sort((a, b) => a.name.localeCompare(b.name));
     }
+
 
     for (const artist of artistsToDisplay) {
         const html = /*html*/ `
@@ -54,7 +56,9 @@ export function filterArtists() {
         filteredArtists = originalArtists.filter(artist => artist.gender === "Female");
     } else {
         // Hvis filterværdien er "All" eller en ukendt værdi, vis alle kunstnere
-        filteredArtists = [...originalArtists];
+        filteredArtists = originalArtists.map(artist => {
+            artist
+        });
     }
 
     console.log("Filter Value:", filterValue); // Udskriv filterværdien

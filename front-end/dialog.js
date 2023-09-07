@@ -29,6 +29,7 @@ export function showUpdateDialog(artist, artists) {
         form.editWebsite.value = selectedArtist.website;
         form.editImage.value = selectedArtist.image;
         form.editShortDescription.value = selectedArtist.shortDescription;
+        form.editFavorite.value = selectedArtist.favorite;
 
         // Åbn dialogen
         editArtistDialog.showModal();

@@ -48,7 +48,7 @@ app.put('/artists/data/:id', async (req, res) => {
     artistToUpdate.website = body.website;
     artistToUpdate.image = body.image;
     artistToUpdate.shortDescription = body.shortDescription;
-    // artistToUpdate.favorite = body.favorite;
+    artistToUpdate.favorite = body.favorite;
     fs.writeFile(`data.json`, JSON.stringify(artists));
     res.json(artists);
 });
@@ -64,6 +64,8 @@ app.delete('/artists/data/:id', async (req, res) => {
     fs.writeFile("data.json", JSON.stringify(updatedArtists))
     res.json(updatedArtists)
 })
+
+
 
 app.listen(3000, () => {
     console.log('Server started on port 3000');
