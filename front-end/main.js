@@ -1,6 +1,6 @@
 "use strict"
-import { showCreateDialog } from "./dialog.js";
-import { filterArtists, showArtists } from "./display.js";
+import { showCreateDialog, showFavoriteDialog } from "./dialog.js";
+import { filterArtists, showArtists, showFavorites } from "./display.js";
 
 window.addEventListener("load", start);
 
@@ -12,6 +12,8 @@ export async function start() {
     document.querySelector("#createNewButton").addEventListener("click", showCreateDialog)
     document.querySelector("#sortBy").addEventListener("change", () => showArtists(artistData));
     document.querySelector("#showOnly").addEventListener("change", filterArtists);
+    document.querySelector("#show-favorites-button").addEventListener("click", showFavoriteDialog);
+    document.querySelector("#show-favorites-button").addEventListener("click", showFavorites);
 
     showArtists(artistData)
 }

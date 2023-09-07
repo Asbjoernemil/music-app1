@@ -11,6 +11,7 @@
 <body>
     <header>Music App</header>
     <nav>
+        <div id="show-favorites-button"><button>Show favorites</button></div>
         <div>
             <div id="createNewButton">
                 <button id="createNewDialog">Add New Artist</button>
@@ -87,6 +88,11 @@
                     <label for="editShortDescription">Short Description:</label>
                     <textarea id="editShortDescription" required></textarea>
 
+                    <label for="editFavorite">Favorite</label>
+                    <input type="checkbox" id="editFavorite" class="favorite-checkbox" name="favorite" value="favorite">
+
+
+
                     <button type="submit">Save</button>
                 </form>
             </dialog>
@@ -136,6 +142,32 @@
                 </tbody>
             </table>
         </div>
+
+        <dialog id="favorites-dialog">
+            <div id="artists">
+                <h2>Favorite artists</h2>
+                <input type="button" value="Cancel" id="cancelButtonInFavorites">
+                <br><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthdate</th>
+                            <th>Gender</th>
+                            <th>Active Since</th>
+                            <th>Genres</th>
+                            <th>Labels</th>
+                            <th>Website</th>
+                            <th>Image</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="favoriteArtistTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </dialog>
+
     </main>
     <script type="module" src="main.js"></script>
     <script type="module" src="display.js"></script>

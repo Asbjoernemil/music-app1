@@ -34,13 +34,25 @@ main {
     padding: 20px;
 }
 
-/* Dialog-styling */
 dialog {
-    max-width: 400px;
+    max-width: 600px;
+    /* Øg bredden til at vise flere oplysninger */
     padding: 20px;
-    background-color: white;
+    background-color: #f8f8f8;
+    /* Ændre baggrundsfarven til en lysere farve */
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+/* Skriftfarve for dialogbokselementer */
+dialog h3,
+dialog label,
+dialog select,
+dialog input,
+dialog textarea,
+dialog button {
+    color: #333;
+    /* Ændre skriftfarven til sort */
 }
 
 /* Tilføj en generel styling til hele tabellen */
@@ -92,4 +104,155 @@ form button {
 /* Hover-effekt på knappen */
 form button:hover {
     background-color: #444;
+}
+
+/* Juster layoutet af editArtistDialog-felterne */
+#editArtistDialog {
+    max-width: 600px;
+    /* Bredden af dialogboksen */
+}
+
+/* Stylet formularlabel for bedre justering */
+#editArtistForm label {
+    display: block;
+    /* Gør labels til blok-elementer, så de står på hver sin linje */
+    margin-bottom: 10px;
+    /* Tilføj lidt mellemrum mellem labels */
+}
+
+/* Stylet inputfelter for bedre justering */
+#editArtistForm input,
+#editArtistForm select,
+#editArtistForm textarea,
+#editArtistForm checkbox {
+    width: 100%;
+    /* Fyld hele bredden af containeren */
+    padding: 5px;
+    /* Tilføj lidt polstring */
+    margin-bottom: 10px;
+    /* Tilføj lidt mellemrum mellem felterne */
+}
+
+/* Gør shortDescription-feltet større */
+#editArtistForm #editShortDescription {
+    height: 70px;
+    /* Juster højden efter dine præferencer */
+}
+
+/* create */
+
+/* Stil for dialogboksen */
+#newArtistDialog {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    /* Center dialogindholdet */
+}
+
+/* Stil for dialogformen og dens elementer */
+#artistForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center formelementer */
+}
+
+#artistForm label {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+#artistForm input[type="text"],
+#artistForm input[type="url"],
+#artistForm select,
+#artistForm textarea {
+    width: 100%;
+    /* Fyld hele bredden af dialogen */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#artistForm button[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+#artistForm button[type="submit"]:hover {
+    background-color: #444;
+}
+
+
+/* Favorite dialog */
+
+/* Stil for dialogboksen */
+#favorites-dialog {
+    max-width: 800px;
+    /* Juster bredden efter dine præferencer */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Stil for dialogens overskrift */
+#favorites-dialog h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Stil for "Cancel" knappen */
+#cancelButtonInFavorites {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+#cancelButtonInFavorites:hover {
+    background-color: #444;
+}
+
+/* Stil for tabellen */
+#favorites-dialog table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Stil for overskrifterne i tabellen */
+#favorites-dialog th {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Stil for cellerne i tabellen */
+#favorites-dialog td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Stil rækkerne skiftevis for bedre læsbarhed */
+#favorites-dialog tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Lidt mellemrum mellem cellerne i samme række */
+#favorites-dialog td+td {
+    border-left: 1px solid #ccc;
 }

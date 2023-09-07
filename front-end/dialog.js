@@ -29,7 +29,9 @@ export function showUpdateDialog(artist, artists) {
         form.editWebsite.value = selectedArtist.website;
         form.editImage.value = selectedArtist.image;
         form.editShortDescription.value = selectedArtist.shortDescription;
-        form.editFavorite.value = selectedArtist.favorite;
+
+        const favoriteCheckbox = form.querySelector('input[name="favorite"]');
+        favoriteCheckbox.checked = selectedArtist.favorite;
 
         // Åbn dialogen
         editArtistDialog.showModal();
@@ -37,4 +39,11 @@ export function showUpdateDialog(artist, artists) {
         // Lyt efter submit på dialogformularen og kald updateArtistClicked
         form.addEventListener("submit", (event) => updateArtistClicked(event, selectedArtist));
     }
+}
+
+export function showFavoriteDialog() {
+
+    const favoriteDialog = document.querySelector("#favorites-dialog");
+
+    favoriteDialog.showModal();
 }

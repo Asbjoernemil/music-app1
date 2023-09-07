@@ -40,6 +40,7 @@ export function updateArtistClicked(event, selectedArtist) {
         website: formInput.editWebsite.value,
         image: formInput.editImage.value,
         shortDescription: formInput.editShortDescription.value,
+        favorite: formInput.querySelector('input[name="favorite"]').checked,
     };
 
     updateArtist(updatedArtist);

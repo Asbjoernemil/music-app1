@@ -14,7 +14,8 @@
         ],
         "website": "https://www.michaeljackson.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Michael_Jackson_in_1988_%28enhanced%29.jpg",
-        "shortDescription": "King of Pop known for his iconic music and performances."
+        "shortDescription": "King of Pop known for his iconic music and performances.",
+        "favorite": false
     },
     {
         "id": 1,
@@ -31,7 +32,8 @@
         ],
         "website": "https://www.thebeatles.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/b/bd/The_Beatles_with_Jimmie_Nicol_916-5098.jpg",
-        "shortDescription": "Legendary British rock band that revolutionized music."
+        "shortDescription": "Legendary British rock band that revolutionized music.",
+        "favorite": false
     },
     {
         "id": 2,
@@ -47,7 +49,8 @@
         ],
         "website": "https://www.bobmarley.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Bob_Marley_in_1980.jpg",
-        "shortDescription": "Reggae icon and global ambassador for peace."
+        "shortDescription": "Reggae icon and global ambassador for peace.",
+        "favorite": false
     },
     {
         "id": 3,
@@ -63,7 +66,8 @@
         ],
         "website": "https://www.elvis.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Elvis_Presley.jpg",
-        "shortDescription": "The King of Rock and Roll, known for his charisma and music."
+        "shortDescription": "The King of Rock and Roll, known for his charisma and music.",
+        "favorite": false
     },
     {
         "id": 4,
@@ -80,7 +84,8 @@
         ],
         "website": "https://www.beyonce.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Beyonce-2008_2.jpg",
-        "shortDescription": "Global superstar and powerful vocalist."
+        "shortDescription": "Global superstar and powerful vocalist.",
+        "favorite": false
     },
     {
         "id": 5,
@@ -96,7 +101,8 @@
         ],
         "website": "https://www.milesdavis.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Miles_Davis_by_Palumbo_cropped.jpg",
-        "shortDescription": "Influential jazz trumpeter and composer."
+        "shortDescription": "Influential jazz trumpeter and composer.",
+        "favorite": false
     },
     {
         "id": 6,
@@ -113,7 +119,8 @@
         ],
         "website": "https://www.madonna.com/",
         "image": "https://live.staticflickr.com/6126/5999574175_a79793bcea_c.jpg",
-        "shortDescription": "Queen of Pop and cultural icon."
+        "shortDescription": "Queen of Pop and cultural icon.",
+        "favorite": false
     },
     {
         "id": 7,
@@ -131,7 +138,8 @@
         ],
         "website": "https://prince.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Prince_%28cropped%29.jpg",
-        "shortDescription": "Musical genius and iconic performer."
+        "shortDescription": "Musical genius and iconic performer.",
+        "favorite": false
     },
     {
         "id": 8,
@@ -148,7 +156,8 @@
         ],
         "website": "https://www.adele.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Adele_-_Live_2009_%284%29.jpg",
-        "shortDescription": "Soulful British singer-songwriter with a powerful voice."
+        "shortDescription": "Soulful British singer-songwriter with a powerful voice.",
+        "favorite": false
     },
     {
         "id": 9,
@@ -165,6 +174,7 @@
         ],
         "website": "https://www.davidbowie.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/David_Bowie_-_TopPop_1974_03_%28cropped%29.png",
-        "shortDescription": "Music chameleon and influential rock artist."
+        "shortDescription": "Music chameleon and influential rock artist.",
+        "favorite": false
     }
 ]

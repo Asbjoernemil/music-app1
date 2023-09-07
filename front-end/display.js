@@ -1,7 +1,7 @@
 "use strict"
 
 import { showUpdateDialog } from "./dialog.js";
-import { deleteArtist } from "./main.js";
+import { deleteArtist, getData } from "./main.js";
 
 let originalArtists = [];
 
@@ -46,22 +46,47 @@ export function showArtists(artists) {
     }
 }
 
-export function filterArtists() {
+export async function filterArtists() {
     const filterValue = document.querySelector("#showOnly").value;
-    let filteredArtists = [];
-
+    const data = await getData();
+    let filteredArtists = []
+    console.log("før", originalArtists);
     if (filterValue === "Male") {
-        filteredArtists = originalArtists.filter(artist => artist.gender === "Male");
+        filteredArtists = data.filter(artist => artist.gender === "Male");
+        console.log("efter", originalArtists);
     } else if (filterValue === "Female") {
-        filteredArtists = originalArtists.filter(artist => artist.gender === "Female");
+        filteredArtists = data.filter(artist => artist.gender === "Female");
     } else {
-        // Hvis filterværdien er "All" eller en ukendt værdi, vis alle kunstnere
-        filteredArtists = originalArtists.map(artist => {
-            artist
-        });
+        filteredArtists = data
+        console.log("ALL", originalArtists)
     }
 
     console.log("Filter Value:", filterValue); // Udskriv filterværdien
     console.log("Filtered Artists:", filteredArtists);
     showArtists(filteredArtists); // Vis de filtrerede kunstnere
+}
+
+export async function showFavorites(artist) {
+    const artists = await getData()
+
+    document.querySelector("#favoriteArtistTableBody").innerHTML = "";
+
+    for (const artist of artists) {
+        if (artist.favorite === true) {
+            const html = /*html*/ `
+    <tr class="artist-row">
+      <td>${artist.name}</td>
+      <td>${artist.birthdate}</td>
+      <td>${artist.gender}</td>
+      <td>${artist.activeSince}</td>
+      <td>${artist.genres}</td>
+      <td>${artist.labels}</td>
+      <td><a href="${artist.website}" target="_blank">${artist.website}</a></td>
+      <td><img src="${artist.image}" alt="${artist.name}" width="100"></td>
+      <td>${artist.shortDescription}</td>
+    </tr>
+    `
+            document.querySelector("#favoriteArtistTableBody").insertAdjacentHTML("beforeend", html);
+        }
+    }
 }
