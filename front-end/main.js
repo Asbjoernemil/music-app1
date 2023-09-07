@@ -13,8 +13,6 @@ export async function start() {
     document.querySelector("#sortBy").addEventListener("change", () => showArtists(artistData));
     document.querySelector("#showOnly").addEventListener("change", filterArtists);
 
-    document.querySelector("#editArtistForm").addEventListener("submit", (event) => updateArtist(event, artistData));
-
     showArtists(artistData)
 }
 
@@ -53,36 +51,13 @@ export async function deleteArtist(id) {
     }
 }
 
-export async function updateArtist(event, artists, id) {
+export async function updateArtist(artist) {
     console.log("Update Artist function called."); // Tilføj denne linje
 
-    const form = event.target;
+    const artistAsJson = JSON.stringify(artist, null, 2);
+    console.log(artist);
 
-    const name = form.editName.value;
-    const gender = form.editGender.value;
-    const birthdate = form.editBirthdate.value;
-    const activeSince = form.editActiveSince.value;
-    const genres = form.editGenres.value;
-    const labels = form.editLabels.value;
-    const website = form.editWebsite.value;
-    const image = form.editImage.value;
-    const shortDescription = form.editShortDescription.value;
-
-    const artistToUpdate = {
-        name,
-        gender,
-        birthdate,
-        activeSince,
-        genres,
-        labels,
-        website,
-        image,
-        shortDescription,
-    };
-
-    const artistAsJson = JSON.stringify(artistToUpdate);
-
-    const response = await fetch(`${endpoint}/artists/data/${id}`, {
+    const response = await fetch(`${endpoint}/artists/data/${artist.id}`, {
         method: "PUT",
         body: artistAsJson,
         headers: {
@@ -92,8 +67,7 @@ export async function updateArtist(event, artists, id) {
 
     if (response.ok) {
         // Opdater kunstnerlisten
-        const updatedArtists = await getData();
+        const updatedArtists = await response.json();
         showArtists(updatedArtists);
-        scrollToTop();
     }
 }

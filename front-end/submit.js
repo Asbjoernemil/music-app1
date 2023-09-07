@@ -9,6 +9,7 @@ export function createNewClicked(event) {
     const formInput = document.forms.artistForm;
 
     const newArtist = {
+
         name: formInput.name.value,
         gender: formInput.gender.value,
         birthdate: formInput.birthdate.value,
@@ -23,13 +24,13 @@ export function createNewClicked(event) {
     createNew(newArtist)
 }
 
-export function updateArtistClicked(event, artist) {
+export function updateArtistClicked(event, selectedArtist) {
     event.preventDefault();
 
     const formInput = document.forms.editArtistForm;
 
     const updatedArtist = {
-        id: artist.id,
+        id: selectedArtist.id,
         name: formInput.editName.value,
         gender: formInput.editGender.value,
         birthdate: formInput.editBirthdate.value,

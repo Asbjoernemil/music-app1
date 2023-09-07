@@ -34,6 +34,6 @@ export function showUpdateDialog(artist, artists) {
         editArtistDialog.showModal();
 
         // Lyt efter submit på dialogformularen og kald updateArtistClicked
-        form.addEventListener("submit", (event) => updateArtistClicked(event, selectedArtist, artists));
+        form.addEventListener("submit", (event) => updateArtistClicked(event, selectedArtist));
     }
 }

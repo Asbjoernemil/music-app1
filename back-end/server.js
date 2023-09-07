@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import fs from "fs/promises"
+import { lstat } from "fs";
 
 const app = express();
 
@@ -31,17 +32,16 @@ app.post('/artists/data', async (req, res) => {
 });
 
 app.put('/artists/data/:id', async (req, res) => {
-    const id = Number(req.params.id);
-    const updatedArtist = req.body;
-
+    const id = req.params.id;
+    console.log(id);
     const data = await fs.readFile(`data.json`);
     const artists = JSON.parse(data);
 
-    let artistToUpdate = artists.find(artist => artist.id == id);
-    const body = request.body;
+    const artistToUpdate = artists.find(obj => obj.id == id);
+    const body = req.body;
     artistToUpdate.name = body.name;
     artistToUpdate.birthdate = body.birthdate;
-    artistToUpdate.birthdate = body.gender;
+    artistToUpdate.gender = body.gender;
     artistToUpdate.activeSince = body.activeSince;
     artistToUpdate.genres = body.genres;
     artistToUpdate.labels = body.labels;
@@ -49,11 +49,8 @@ app.put('/artists/data/:id', async (req, res) => {
     artistToUpdate.image = body.image;
     artistToUpdate.shortDescription = body.shortDescription;
     // artistToUpdate.favorite = body.favorite;
-
-    console.log(body);
-    console.log(artists);
     fs.writeFile(`data.json`, JSON.stringify(artists));
-    response.json(artists);
+    res.json(artists);
 });
 
 app.delete('/artists/data/:id', async (req, res) => {

@@ -46,7 +46,7 @@ export function showArtists(artists) {
 
 export function filterArtists() {
     const filterValue = document.querySelector("#showOnly").value;
-    let filteredArtists;
+    let filteredArtists = [];
 
     if (filterValue === "Male") {
         filteredArtists = originalArtists.filter(artist => artist.gender === "Male");
